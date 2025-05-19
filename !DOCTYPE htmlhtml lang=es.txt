@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMSA - Ingreso Prefacultativo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    #perfil {
+      display: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Universidad Mayor de San Andrés</h1>
+    <h2>Ingreso Prefacultativo 2025</h2>
+  </header>  <div class="container" id="login">
+    <h3>Iniciar Sesión</h3>
+    <input type="text" id="nombre" placeholder="Nombre completo">
+    <input type="text" id="matricula" placeholder="Matrícula">
+    <button onclick="ingresar()">Ingresar</button>
+  </div>  <div class="container" id="perfil">
+    <h3>Bienvenido, Andrés Jheferson Amoraga Soliz</h3>
+    <p><strong>Carrera:</strong> Prefacultativo</p>
+    <p><strong>Matrícula:</strong> MAT-99</p>
+    <p><strong>Año:</strong> 2025</p>
+    <h4>Materias:</h4>
+    <table>
+      <tr><th>Materia</th><th>Código</th><th>Nota</th></tr>
+      <tr><td>Matemáticas</td><td>MAT-99</td><td>--</td></tr>
+      <tr><td>Informática</td><td>INF-99</td><td>--</td></tr>
+      <tr><td>Comunicación</td><td>COM-99</td><td>--</td></tr>
+    </table>
+    <br>
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
+  </div>  <script>
+    function ingresar() {
+      const nombre = document.getElementById("nombre").value;
+      const matricula = document.getElementById("matricula").value;
+      if (nombre.toLowerCase() === "andrés jheferson amoraga soliz" && matricula.toUpperCase() === "MAT-99") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("perfil").style.display = "block";
+      } else {
+        alert("Datos incorrectos. Intenta de nuevo.");
+      }
+    }
+    function cerrarSesion() {
+      document.getElementById("perfil").style.display = "none";
+      document.getElementById("login").style.display = "block";
+    }
+  </script></body>
+</html>
